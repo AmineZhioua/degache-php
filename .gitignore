@@ -1,0 +1,4 @@
+.env
+issuesToNote.txt
+vendor
+.phpunit.cache
