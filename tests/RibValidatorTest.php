@@ -8,6 +8,7 @@ use AmineZhioua\DegachePhp\Constants\Banks;
 use AmineZhioua\DegachePhp\Validators\RibValidator;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(RibValidator::class)]
 final class RibValidatorTest extends TestCase
 {
     public function testValidatesCorrectRib(): void

@@ -7,6 +7,7 @@ namespace AmineZhioua\DegachePhp\Tests;
 use AmineZhioua\DegachePhp\Validators\TaxIdValidator;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(TaxIdValidator::class)]
 final class TaxIdValidatorTest extends TestCase
 {
     public function testValidatesCorrectTaxIds(): void

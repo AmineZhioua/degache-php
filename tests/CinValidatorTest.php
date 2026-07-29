@@ -7,6 +7,7 @@ namespace AmineZhioua\DegachePhp\Tests;
 use AmineZhioua\DegachePhp\Validators\CinValidator;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(CinValidator::class)]
 final class CinValidatorTest extends TestCase
 {
     public function testValidatesCorrectCinNumbers(): void

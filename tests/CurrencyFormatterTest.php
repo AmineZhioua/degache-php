@@ -7,6 +7,8 @@ namespace AmineZhioua\DegachePhp\Tests;
 use AmineZhioua\DegachePhp\Formatters\CurrencyFormatter;
 use PHPUnit\Framework\TestCase;
 
+
+#[CoversClass(CurrencyFormatter::class)]
 final class CurrencyFormatterTest extends TestCase
 {
     public function testFormatsWithDefaultOptions(): void

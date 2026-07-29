@@ -9,6 +9,7 @@ use AmineZhioua\DegachePhp\Formatters\PhoneFormatter;
 use AmineZhioua\DegachePhp\Validators\PhoneValidator;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(PhoneValidator::class)]
 final class PhoneValidatorTest extends TestCase
 {
     public function testValidatesCorrectNumbers(): void

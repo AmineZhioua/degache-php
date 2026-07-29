@@ -1,6 +1,6 @@
 {
   "name": "amine-zhioua/degache-php",
-  "description": "A Tunisian utility library for working with CIN, phone numbers, addresses, and more",
+  "description": "A framework-agnostic PHP library of Tunisian utilities: phone number, CIN, RIB, car plate, postal code, and tax ID validation, plus currency and date formatting for the Tunisian locale.",
   "type": "library",
   "require-dev": {
     "phpunit/phpunit": "11"
@@ -11,14 +11,41 @@
       "AmineZhioua\\DegachePhp\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "AmineZhioua\\DegachePhp\\Tests\\": "tests/"
+    }
+  },
   "authors": [
     {
-      "name": "AmineZhioua",
-      "email": "amine-zhioua@outlook.com"
+      "name": "Amine Zhioua"
     }
   ],
   "require": {
     "php": "^8.2",
     "ext-intl": "*"
+  },
+  "keywords": [
+    "tunisia",
+    "tunisian",
+    "validation",
+    "rib",
+    "cin",
+    "phone-number",
+    "car-plate",
+    "postal-code",
+    "tax-id",
+    "matricule-fiscal",
+    "currency",
+    "formatter"
+  ],
+  "scripts": {
+    "test": "phpunit",
+    "test:coverage": "phpunit --coverage-text"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
   }
 }

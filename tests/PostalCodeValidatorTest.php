@@ -7,6 +7,7 @@ namespace AmineZhioua\DegachePhp\Tests;
 use AmineZhioua\DegachePhp\Validators\PostalCodeValidator;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(PostalCodeValidator::class)]
 final class PostalCodeValidatorTest extends TestCase
 {
     public function testValidatesRealExistingPostalCodes(): void

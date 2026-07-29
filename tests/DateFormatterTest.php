@@ -9,6 +9,7 @@ use DateTimeImmutable;
 use IntlDateFormatter;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(DateFormatter::class)]
 final class DateFormatterTest extends TestCase
 {
     public function testFormatsDateWithDefaultOptions(): void
