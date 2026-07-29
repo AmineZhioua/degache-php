@@ -8,7 +8,7 @@ Works with Laravel, Symfony, CodeIgniter, or plain PHP — the core package has 
 
 ## Requirements
 
-- PHP 8.3+
+- PHP 8.2+
 - `ext-intl` (used for currency and date formatting)
 
 ## Installation
