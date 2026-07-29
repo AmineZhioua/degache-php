@@ -11,6 +11,8 @@ use AmineZhioua\DegachePhp\Validators\PhoneValidator;
 use AmineZhioua\DegachePhp\Validators\CinValidator;
 use AmineZhioua\DegachePhp\Validators\CarPlateValidator;
 use AmineZhioua\DegachePhp\Validators\RibValidator;
+use AmineZhioua\DegachePhp\Validators\PostalCodeValidator;
+use AmineZhioua\DegachePhp\Validators\TaxIdValidator;
 use AmineZhioua\DegachePhp\Formatters\CurrencyFormatter;
 use AmineZhioua\DegachePhp\Formatters\DateFormatter;
 use AmineZhioua\DegachePhp\Enums\CarPlateType;
@@ -98,5 +100,21 @@ final class Degache
         bool $strict = false,
     ): ?CarPlateInfo {
         return CarPlateValidator::getInfo($carPlate, $type, $strict);
+    }
+
+    /*
+        Postal Code all methods
+    */
+    public static function validatePostalCode(?string $postalCode): bool
+    {
+        return PostalCodeValidator::validate($postalCode);
+    }
+
+    /*
+        Tax ID all methods
+    */
+    public static function validateTaxID(?string $taxId): bool
+    {
+        return TaxIdValidator::validate($taxId);
     }
 }
