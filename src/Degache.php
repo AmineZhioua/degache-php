@@ -7,6 +7,7 @@ namespace AmineZhioua\DegachePhp;
 use AmineZhioua\DegachePhp\DTO\CarrierInfo;
 use AmineZhioua\DegachePhp\Formatters\PhoneFormatter;
 use AmineZhioua\DegachePhp\Validators\PhoneValidator;
+use AmineZhioua\DegachePhp\Validators\CinValidator;
 
 /**
  * Facade providing convenient access to DegachePhp's Tunisian utilities.
@@ -16,6 +17,9 @@ use AmineZhioua\DegachePhp\Validators\PhoneValidator;
  */
 final class Degache
 {
+    /*
+        Phone Number all Methods
+    */
     public static function validatePhoneNumber(?string $phoneNumber, bool $strict = false): bool
     {
         return PhoneValidator::validate($phoneNumber, $strict);
@@ -29,5 +33,14 @@ final class Degache
     public static function formatPhoneNumber(?string $phoneNumber): ?string
     {
         return PhoneFormatter::format($phoneNumber);
+    }
+
+
+    /*
+        CIN all methods
+    */
+    public static function validateCIN(?string $cin): bool
+    {
+        return CinValidator::validate($cin);
     }
 }
