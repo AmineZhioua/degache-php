@@ -10,15 +10,6 @@ use NumberFormatter;
 final class CurrencyFormatter
 {
     /**
-     * Locale used for currency formatting.
-     *
-     * TODO: extract to a shared Constants\Locale (mirroring degachejs's
-     * formatters/date.ts LOCALE) once the date formatter feature is ported,
-     * so this isn't duplicated across formatters.
-     */
-    private const string LOCALE = 'ar_TN';
-
-    /**
      * Formats a monetary amount in Tunisian Dinar.
      *
      * @param float $amount The amount to format.

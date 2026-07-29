@@ -21,7 +21,7 @@ final class DateFormatter
     public static function format(
         DateTimeInterface $date,
         int $dateType = IntlDateFormatter::LONG,
-        int $timeType = IntlDateFormatter::NONE,
+        int $timeType = IntlDateFormatter::NONE
     ): string {
         $formatter = new IntlDateFormatter(
             Locale::DEFAULT,

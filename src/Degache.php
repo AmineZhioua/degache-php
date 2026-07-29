@@ -10,6 +10,10 @@ use AmineZhioua\DegachePhp\Formatters\PhoneFormatter;
 use AmineZhioua\DegachePhp\Validators\PhoneValidator;
 use AmineZhioua\DegachePhp\Validators\CinValidator;
 use AmineZhioua\DegachePhp\Validators\RibValidator;
+use AmineZhioua\DegachePhp\Formatters\CurrencyFormatter;
+use AmineZhioua\DegachePhp\Formatters\DateFormatter;
+use DateTimeInterface;
+use IntlDateFormatter;
 
 /**
  * Facade providing convenient access to DegachePhp's Tunisian utilities.
@@ -37,7 +41,6 @@ final class Degache
         return PhoneFormatter::format($phoneNumber);
     }
 
-
     /*
         CIN all methods
     */
@@ -45,7 +48,6 @@ final class Degache
     {
         return CinValidator::validate($cin);
     }
-
 
     /*
         Banks all methods
@@ -56,5 +58,23 @@ final class Degache
 
     public static function getBankInfoFromRIB(?string $rib): ?BankInfo {
         return RibValidator::getBankFromRib($rib);
+    }
+
+    /*
+        Currency all methods
+    */
+    public static function formatCurrency(float $amount, bool $code = false, bool $symbol = false): string {
+        return CurrencyFormatter::format($amount, $code, $symbol);
+    }
+
+    /*
+        Date all methods
+    */
+    public static function formatDate(
+        DateTimeInterface $date,
+        int $dateType = IntlDateFormatter::LONG,
+        int $timeType = IntlDateFormatter::NONE
+    ): string {
+        return DateFormatter::format($date, $dateType, $timeType);
     }
 }
