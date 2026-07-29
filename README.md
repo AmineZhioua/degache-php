@@ -88,7 +88,7 @@ $bank = Degache::getBankInfoFromRIB('08123456789012345678');
 // $bank->name === 'Banque Internationale Arabe de Tunisie'
 ```
 
-> **Note:** RIB validation checks structural format and that the bank code exists, but does **not** yet verify the RIB key checksum digit — this mirrors an open TODO in the original library.
+> **Note:** RIB validation checks structural format and that the bank code exists, but does **not** yet verify the RIB key checksum digit.
 
 ### Car plate
 
