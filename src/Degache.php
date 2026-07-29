@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace AmineZhioua\DegachePhp;
 
 use AmineZhioua\DegachePhp\DTO\CarrierInfo;
+use AmineZhioua\DegachePhp\DTO\BankInfo;;
 use AmineZhioua\DegachePhp\Formatters\PhoneFormatter;
 use AmineZhioua\DegachePhp\Validators\PhoneValidator;
 use AmineZhioua\DegachePhp\Validators\CinValidator;
+use AmineZhioua\DegachePhp\Validators\RibValidator;
 
 /**
  * Facade providing convenient access to DegachePhp's Tunisian utilities.
@@ -42,5 +44,17 @@ final class Degache
     public static function validateCIN(?string $cin): bool
     {
         return CinValidator::validate($cin);
+    }
+
+
+    /*
+        Banks all methods
+    */
+    public static function validateRIB(?string $rib): bool {
+        return RibValidator::validate($rib);
+    }
+
+    public static function getBankInfoFromRIB(?string $rib): ?BankInfo {
+        return RibValidator::getBankFromRib($rib);
     }
 }
