@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace AmineZhioua\DegachePhp;
 
 use AmineZhioua\DegachePhp\DTO\CarrierInfo;
-use AmineZhioua\DegachePhp\DTO\BankInfo;;
+use AmineZhioua\DegachePhp\DTO\BankInfo;
 use AmineZhioua\DegachePhp\Formatters\PhoneFormatter;
 use AmineZhioua\DegachePhp\Validators\PhoneValidator;
 use AmineZhioua\DegachePhp\Validators\CinValidator;
+use AmineZhioua\DegachePhp\Validators\CarPlateValidator;
 use AmineZhioua\DegachePhp\Validators\RibValidator;
 use AmineZhioua\DegachePhp\Formatters\CurrencyFormatter;
 use AmineZhioua\DegachePhp\Formatters\DateFormatter;
+use AmineZhioua\DegachePhp\Enums\CarPlateType;
+use AmineZhioua\DegachePhp\DTO\CarPlateInfo;
 use DateTimeInterface;
 use IntlDateFormatter;
 
@@ -76,5 +79,24 @@ final class Degache
         int $timeType = IntlDateFormatter::NONE
     ): string {
         return DateFormatter::format($date, $dateType, $timeType);
+    }
+
+    /*
+        Car Plate all methods
+    */
+    public static function validateCarPlate(
+        ?string $carPlate,
+        CarPlateType $type = CarPlateType::Any,
+        bool $strict = false,
+    ): bool {
+        return CarPlateValidator::validate($carPlate, $type, $strict);
+    }
+
+    public static function getCarPlateInfo(
+        ?string $carPlate,
+        CarPlateType $type = CarPlateType::Any,
+        bool $strict = false,
+    ): ?CarPlateInfo {
+        return CarPlateValidator::getInfo($carPlate, $type, $strict);
     }
 }
