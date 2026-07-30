@@ -183,7 +183,7 @@ composer test
 
 ## Contributing
 
-Issues and PRs welcome. If you're porting a new feature from `degachejs`, please include the corresponding upstream test file (or written test cases) so behavior can be verified rather than guessed at.
+Issues and PRs welcome.
 
 ## License
 
